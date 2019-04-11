@@ -15,7 +15,7 @@ rule Arquitectura2Serie
 	to
 	    t:series!Serie{
 		    t.name=s.architecture;    
-		    t.serieDato=s.results.equivalent();
+		    t.serieDato=s.resultsJMeter.equivalent();
 	    }
 
 rule Results2Dato
