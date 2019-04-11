@@ -12,7 +12,7 @@ operation jm!JMeter getGrafica(): series!Grafica {
 operation jm!ArchitectureResults getSerie(): series!Serie {
 	var s= new series!Serie;
 	s.name=self.architecture;    
-	s.serieDato=self.results.collect(c|c.getDato());
+	s.serieDato=self.resultsJMeter.collect(c|c.getDato());
 	return s;
 }   
 operation jm!Results getDato(): series!Dato {   
