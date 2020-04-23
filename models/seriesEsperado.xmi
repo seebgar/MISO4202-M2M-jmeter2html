@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<series:Grafica xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:series="http://www.example.org/series" xsi:schemaLocation="http://www.example.org/series ../metamodels/series.ecore" titulo="Line Chart" subtitulo="" tipo="lineChart">
+<series:Grafica xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:series="http://www.example.org/series" titulo="Line Chart" subtitulo="" tipo="lineChart">
   <graficaEjeX xsi:type="series:Serie" name="Cloud_Rest">
     <serieDato name="32858"/>
     <serieDato name="5914"/>

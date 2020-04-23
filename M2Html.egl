@@ -28,16 +28,17 @@ $(function () {
  }
   //Se crea dos arreglos, uno para los datos de la serie y otro que contenga el nombre y los datos de cada serie.
   for(series in gf.graficaSerie){
-  %]var datosSerie=[];
-  [%
-  for(datos in series.serieDato){
-  %]datosSerie.push([%=datos.name%]);
-  [%
-  }
-  
-  %]
-  seriesFinal.push({ name: '[%=series.name%]',data: datosSerie.map(Number)})
-  [%
+	  %]var datosSerie=[];
+	  [%
+	  
+	  for(datos in series.serieDato){
+		  %]datosSerie.push([%=datos.name%]);
+		  [%
+	  }
+	  
+	  %]
+	  seriesFinal.push({ name: '[%=series.name%]',data: datosSerie.map(Number)})
+	  [%
   }
   %]
     $('#container').highcharts({

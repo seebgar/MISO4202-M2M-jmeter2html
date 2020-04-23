@@ -1,3 +1,11 @@
+pre {
+  "Running ETL".println();
+}
+
+post {
+  "Ended ETL".println();
+}
+
 rule JMeter2Series
 	transform
 	   s:jm!JMeter
@@ -17,34 +25,31 @@ rule Arquitectura2Serie
 	    s:jm!ArchitectureResults
 	to
 	    t:series!Serie{
-		    t.name=s.architecture;    
-		    t.serieDato=s.resultsJMeter.equivalent();
+		    t.name=s.architecture; 
+		    
+		    for ( resultJMeter in s.resultsJMeter ) {
+		    	var d = new series!Dato();
+		    	d.name = resultJMeter.result.last().value;
+		    	t.serieDato.add(d);
+		    }
+		    
 	    }
 	    
 	    
-rule Results2Dato
-	transform
-	    s:jm!Results
-	to
-	    t:series!Dato{    
-		    t.name=s.result.last().value;
-	    }
-	   
 
 rule Arquitectura2EjeX
 	transform
 	    s:jm!ArchitectureResults
 	to
 	    t:series!EjeX{
-		    t.name=s.architecture;    
-		    t.ejeXCategoria=s.resultsJMeter.equivalent();
+		    t.name=s.architecture; 
+		    
+		    for ( resultJMeter in s.resultsJMeter ) {
+		    	var c = new series!Categoria();
+		    	c.name = resultJMeter.result.get(1).value;
+		    	t.ejeXCategoria.add(c);
+		    }
+		    
 	    }
 	   
 
-rule Results2Categoria
-	transform
-	    s:jm!Results
-	to
-	    t:series!Categoria{    
-		    t.name=s.result.get(1).value;
-	    }
