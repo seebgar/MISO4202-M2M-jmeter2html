@@ -18,7 +18,12 @@ $(function () {
   //Se crea un array con los elementos del eje x
  if (gf.graficaEjeX.size() > 0  ) {
  	
- 		 for(ct in gf.graficaEjeX.at(0).ejeXCategoria){
+ 	 gf.graficaEjeX.println();
+ 	 
+ 	//	 for(ct in gf.graficaEjeX.at(0).ejeXCategoria){
+ 		var count = 0;
+ 	  for(ct in gf.graficaEjeX){
+ 	
 		  %]
 		  categorias.push('[%=ct.name%]')
 		  [%
