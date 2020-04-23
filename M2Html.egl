@@ -16,11 +16,16 @@ $(function () {
   [%
   var gf=series!Grafica.all.at(0);
   //Se crea un array con los elementos del eje x
-  for(ct in gf.graficaEjeX.at(0).ejeXCategoria){
-  %]
-  categorias.push('[%=ct.name%]')
-  [%
-  }
+ if (gf.graficaEjeX.size() > 0  ) {
+ 	
+ 		 for(ct in gf.graficaEjeX.at(0).ejeXCategoria){
+		  %]
+		  categorias.push('[%=ct.name%]')
+		  [%
+	  	}
+ 	
+ 	
+ }
   //Se crea dos arreglos, uno para los datos de la serie y otro que contenga el nombre y los datos de cada serie.
   for(series in gf.graficaSerie){
   %]var datosSerie=[];
@@ -69,7 +74,7 @@ $(function () {
 </head>
 <body>
 <div>
-	<h1>Test</h1>
+	<h3>Sebastian Garcia</h3>
 </div>
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 </body>

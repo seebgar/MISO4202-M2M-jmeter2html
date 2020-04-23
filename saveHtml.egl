@@ -1,5 +1,5 @@
 [%
 	var t:Template:= TemplateFactory.load('M2Html.egl');
-	t.generate('LineChartWithDataLabels.html');
+	t.generate('entregable.html');
 	
 %] 
