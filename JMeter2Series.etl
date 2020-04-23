@@ -26,4 +26,21 @@ rule Results2Dato
 		    t.name=s.result.last().value;
 	    }
     
+
+rule Arquitectura2EjeX
+	transform 
+		s:jm!ArchitectureResults
+	to
+		t:series!EjeX{
+			t.name="prueba ar 2 e";
+			t.ejeXCategoria=s.resultsJMeter.equivalent();
+		}
+		
+rule Results2Categoria
+	transform
+		s:jm!Results
+	to
+		t:series!Categoria{
+			t.name="prueba r 2 cat";
+		}
     
